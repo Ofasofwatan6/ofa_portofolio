@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Booking Analytics | Ofa Sofwatan Munifa</title>
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        :root {
+            --cream: #f6f0e7;
+            --cream-dark: #eee2d2;
+            --brown: #3d2920;
+            --brown-light: #805f4e;
+            --line: #dccdbd;
+            --white: #fffdf9;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--cream);
+            color: var(--brown);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .project-detail {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 25px 48px 100px;
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-projects {
+            display: inline-block;
+            margin-bottom: 55px;
+            color: var(--brown);
+            font-size: 12px;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .back-projects:hover {
+            opacity: 0.55;
+        }
+
+
+        /* =========================
+           SECTION NUMBER
+        ========================= */
+
+        .section-number {
+            display: block;
+            color: var(--brown-light);
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           01 OVERVIEW
+        ========================= */
+
+        .project-overview {
+            padding-bottom: 0;
+        }
+
+        .project-overview .section-number {
+            margin-bottom: 18px;
+        }
+
+        .project-overview h1 {
+            max-width: 900px;
+            margin: 0 0 30px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(48px, 7vw, 82px);
+            font-weight: 500;
+            line-height: 0.95;
+            letter-spacing: -4px;
+
+            color: var(--brown);
+        }
+
+        .project-description {
+            max-width: 720px;
+            margin: 0 0 55px;
+
+            color: var(--brown-light);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           PROJECT META
+        ========================= */
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            border-top: 1px solid var(--line);
+            border-left: 1px solid var(--line);
+        }
+
+        .meta-item {
+            min-height: 100px;
+            padding: 25px 18px;
+
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .meta-item span {
+            display: block;
+            margin-bottom: 8px;
+
+            color: var(--brown-light);
+            font-size: 9px;
+            letter-spacing: 1.5px;
+        }
+
+        .meta-item strong {
+            display: block;
+
+            color: var(--brown);
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+
+        /* =========================
+           02 VIDEO
+        ========================= */
+
+        .project-video-section {
+            margin-top: 150px;
+        }
+
+        .project-video-header {
+            margin-bottom: 28px;
+        }
+
+        .project-video-header .section-number {
+            margin-bottom: 15px;
+        }
+
+        .project-video-header h2 {
+            margin: 0 0 8px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(40px, 5vw, 60px);
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .project-video-header p {
+            max-width: 800px;
+            margin: 0;
+
+            color: var(--brown-light);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .project-video {
+            display: block;
+
+            width: 100%;
+            max-width: 1200px;
+            aspect-ratio: 16 / 9;
+
+            border: 1px solid var(--line);
+            border-radius: 14px;
+
+            background: #222;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================
+           03 PROCESS
+        ========================= */
+
+        .process-section {
+            margin-top: 150px;
+        }
+
+        .process-header {
+            margin-bottom: 55px;
+        }
+
+        .process-header .section-number {
+            margin-bottom: 15px;
+        }
+
+        .process-header h2 {
+            margin: 0 0 18px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(40px, 5vw, 60px);
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .process-header p {
+            max-width: 720px;
+            margin: 0;
+
+            color: var(--brown-light);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .process-flow {
+            border-top: 1px solid var(--line);
+        }
+
+        .process-step {
+            display: grid;
+
+            grid-template-columns: 70px 230px 1fr;
+            gap: 30px;
+
+            padding: 38px 0;
+
+            border-bottom: 1px solid var(--line);
+
+            align-items: start;
+        }
+
+        .process-number {
+            color: var(--brown-light);
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .process-category {
+            padding-top: 3px;
+
+            color: var(--brown-light);
+
+            font-size: 12px;
+            line-height: 1.5;
+
+            letter-spacing: 1px;
+        }
+
+        .process-content {
+            max-width: 650px;
+        }
+
+        .process-content h3 {
+            margin: 0 0 10px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .process-content p {
+            margin: 0;
+
+            color: var(--brown-light);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           04 DASHBOARD
+        ========================= */
+
+        .dashboard-section {
+            margin-top: 150px;
+        }
+
+        .dashboard-header {
+            margin-bottom: 55px;
+        }
+
+        .dashboard-header .section-number {
+            margin-bottom: 15px;
+        }
+
+        .dashboard-header h2 {
+            margin: 0 0 18px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(40px, 5vw, 60px);
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .dashboard-header p {
+            max-width: 720px;
+            margin: 0;
+
+            color: var(--brown-light);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .dashboard-list {
+            border-top: 1px solid var(--line);
+        }
+
+        .dashboard-item {
+            display: grid;
+
+            grid-template-columns: 70px 300px 1fr;
+            gap: 30px;
+
+            padding: 35px 0;
+
+            border-bottom: 1px solid var(--line);
+
+            align-items: start;
+        }
+
+        .dashboard-number {
+            color: var(--brown-light);
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .dashboard-item h3 {
+            margin: 0;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .dashboard-item p {
+            max-width: 650px;
+            margin: 0;
+
+            color: var(--brown-light);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           05 KEY INSIGHTS
+        ========================= */
+
+        .insights-section {
+            margin-top: 150px;
+        }
+
+        .insights-header {
+            margin-bottom: 45px;
+        }
+
+        .insights-header .section-number {
+            margin-bottom: 15px;
+        }
+
+        .insights-header h2 {
+            margin: 0;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(40px, 5vw, 60px);
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .insights-content {
+            max-width: 900px;
+
+            padding-top: 35px;
+
+            border-top: 1px solid var(--line);
+        }
+
+        .insights-content p {
+            margin: 0 0 25px;
+
+            color: var(--brown-light);
+
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .insights-content p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           06 REPORT
+        ========================= */
+
+        .report-section {
+            margin-top: 150px;
+            padding-bottom: 80px;
+        }
+
+        .report-header .section-number {
+            margin-bottom: 15px;
+        }
+
+        .report-header h2 {
+            margin: 0 0 18px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(40px, 5vw, 60px);
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .report-header p {
+            max-width: 720px;
+            margin: 0 0 35px;
+
+            color: var(--brown-light);
+
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .report-button {
+            display: inline-block;
+
+            padding: 14px 22px;
+
+            border: 1px solid var(--brown);
+            border-radius: 999px;
+
+            color: var(--brown);
+
+            font-size: 12px;
+            text-decoration: none;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .report-button:hover {
+            background: var(--brown);
+            color: var(--cream);
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .project-detail {
+                padding: 20px 25px 70px;
+            }
+
+            .back-projects {
+                margin-bottom: 40px;
+            }
+
+            .project-overview h1 {
+                font-size: 48px;
+                letter-spacing: -2.5px;
+            }
+
+            .project-description {
+                font-size: 14px;
+                margin-bottom: 40px;
+            }
+
+            .project-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .meta-item {
+                min-height: auto;
+                padding: 20px 15px;
+            }
+
+            .project-video-section,
+            .process-section,
+            .dashboard-section,
+            .insights-section,
+            .report-section {
+                margin-top: 100px;
+            }
+
+            .process-step {
+                grid-template-columns: 45px 1fr;
+                gap: 15px;
+                padding: 28px 0;
+            }
+
+            .process-category {
+                grid-column: 2;
+            }
+
+            .process-content {
+                grid-column: 2;
+            }
+
+            .dashboard-item {
+                grid-template-columns: 45px 1fr;
+                gap: 15px;
+                padding: 28px 0;
+            }
+
+            .dashboard-item h3 {
+                grid-column: 2;
+                font-size: 22px;
+            }
+
+            .dashboard-item p {
+                grid-column: 2;
+            }
+
+            .insights-content p {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <main class="project-detail">
+
+
+        <!-- =========================
+             BACK TO PROJECTS
+        ========================== -->
+
+        <a href="index.html" class="back-projects">
+            ← Back to Projects
+        </a>
+
+
+        <!-- =========================
+             01 OVERVIEW
+        ========================== -->
+
+        <section class="project-overview">
+
+            <span class="section-number">
+                01
+            </span>
+
+            <h1>
+                Data Engineering Pipeline
+                for Hotel Booking Analytics
+            </h1>
+
+            <p class="project-description">
+                This project developed an end-to-end data engineering
+                pipeline to transform raw hotel booking data into
+                structured, analysis-ready information for business
+                intelligence. The project used the Hotel Booking dataset
+                containing 119,390 reservation records with 36 attributes
+                covering City Hotel and Resort Hotel bookings from July
+                2015 to August 2017.
+            </p>
+
+
+            <div class="project-meta">
+
+                <div class="meta-item">
+
+                    <span>
+                        ROLE
+                    </span>
+
+                    <strong>
+                        Data Engineer & Data Analyst
+                    </strong>
+
+                </div>
+
+
+                <div class="meta-item">
+
+                    <span>
+                        TOOLS
+                    </span>
+
+                    <strong>
+                        Pentaho · XAMPP · MySQL · Power BI
+                    </strong>
+
+                </div>
+
+
+                <div class="meta-item">
+
+                    <span>
+                        DATASET
+                    </span>
+
+                    <strong>
+                        Hotel Booking Demand
+                    </strong>
+
+                </div>
+
+
+                <div class="meta-item">
+
+                    <span>
+                        DATA
+                    </span>
+
+                    <strong>
+                        119,390 records · 36 attributes
+                    </strong>
+
+                </div>
+
+
+                <div class="meta-item">
+
+                    <span>
+                        PERIOD
+                    </span>
+
+                    <strong>
+                        July 2015 – August 2017
+                    </strong>
+
+                </div>
+
+
+                <div class="meta-item">
+
+                    <span>
+                        OUTPUT
+                    </span>
+
+                    <strong>
+                        MySQL Data Warehouse · Power BI Dashboard
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             02 VIDEO
+        ========================== -->
+
+        <section class="project-video-section">
+
+            <div class="project-video-header">
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <h2>
+                    Project Video
+                </h2>
+
+                <p>
+                    A walkthrough of the data engineering pipeline,
+                    from data processing and transformation to the
+                    final business intelligence dashboard.
+                </p>
+
+            </div>
+
+
+            <video
+                class="project-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+            >
+
+                <source
+                    src="report/hotel-booking.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support the video tag.
+
+            </video>
+
+        </section>
+
+
+        <!-- =========================
+             03 PROCESS
+        ========================== -->
+
+        <section class="process-section">
+
+            <div class="process-header">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <h2>
+                    Process
+                </h2>
+
+                <p>
+                    The project followed an end-to-end ETL workflow to
+                    transform raw hotel booking data into a structured
+                    data warehouse for business intelligence analysis.
+                </p>
+
+            </div>
+
+
+            <div class="process-flow">
+
+
+                <!-- STEP 01 -->
+
+                <div class="process-step">
+
+                    <div class="process-number">
+                        01
+                    </div>
+
+                    <div class="process-category">
+                        DATA SOURCE
+                    </div>
+
+                    <div class="process-content">
+
+                        <h3>
+                            Raw Hotel Booking Data
+                        </h3>
+
+                        <p>
+                            The Hotel Booking Demand dataset was imported
+                            from CSV format. It contains 119,390
+                            reservation records with 36 attributes
+                            covering City Hotel and Resort Hotel
+                            bookings from July 2015 to August 2017.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 02 -->
+
+                <div class="process-step">
+
+                    <div class="process-number">
+                        02
+                    </div>
+
+                    <div class="process-category">
+                        ETL · PENTAHO
+                    </div>
+
+                    <div class="process-content">
+
+                        <h3>
+                            Data Cleansing
+                        </h3>
+
+                        <p>
+                            The raw data was cleaned and standardized by
+                            handling missing values, correcting data
+                            types, filtering invalid records, and removing
+                            unnecessary attributes before further
+                            transformation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 03 -->
+
+                <div class="process-step">
+
+                    <div class="process-number">
+                        03
+                    </div>
+
+                    <div class="process-category">
+                        ETL · PENTAHO
+                    </div>
+
+                    <div class="process-content">
+
+                        <h3>
+                            Data Transformation
+                        </h3>
+
+                        <p>
+                            The cleaned data was transformed by generating
+                            additional attributes such as total nights
+                            and estimated revenue. Arrival months were
+                            also grouped into seasonal categories for
+                            analysis.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 04 -->
+
+                <div class="process-step">
+
+                    <div class="process-number">
+                        04
+                    </div>
+
+                    <div class="process-category">
+                        DATA WAREHOUSE · MYSQL
+                    </div>
+
+                    <div class="process-content">
+
+                        <h3>
+                            Star Schema
+                        </h3>
+
+                        <p>
+                            The transformed data was organized into a
+                            MySQL data warehouse using a star schema
+                            consisting of one fact table and eleven
+                            dimension tables. Surrogate keys were used
+                            to maintain relationships between the tables.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 05 -->
+
+                <div class="process-step">
+
+                    <div class="process-number">
+                        05
+                    </div>
+
+                    <div class="process-category">
+                        ETL · PENTAHO
+                    </div>
+
+                    <div class="process-content">
+
+                        <h3>
+                            ETL Job Orchestration
+                        </h3>
+
+                        <p>
+                            A Pentaho ETL Job was used to manage the
+                            execution order of the pipeline, starting
+                            from raw data loading and cleansing, followed
+                            by dimension transformations, and ending
+                            with the fact booking load.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 06 -->
+
+                <div class="process-step">
+
+                    <div class="process-number">
+                        06
+                    </div>
+
+                    <div class="process-category">
+                        BUSINESS INTELLIGENCE · POWER BI
+                    </div>
+
+                    <div class="process-content">
+
+                        <h3>
+                            Dashboard & Analysis
+                        </h3>
+
+                        <p>
+                            The resulting data warehouse was connected
+                            to Power BI to create an interactive dashboard
+                            for analyzing booking cancellations, revenue,
+                            seasonality, market segments, distribution
+                            channels, and customer characteristics.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             04 DASHBOARD
+        ========================== -->
+
+        <section class="dashboard-section">
+
+            <div class="dashboard-header">
+
+                <span class="section-number">
+                    04
+                </span>
+
+                <h2>
+                    Dashboard
+                </h2>
+
+                <p>
+                    The Power BI dashboard presents several analytical
+                    views to explore hotel booking performance and
+                    identify patterns across booking behavior, revenue,
+                    and customer distribution.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-list">
+
+
+                <!-- DASHBOARD 01 -->
+
+                <div class="dashboard-item">
+
+                    <div class="dashboard-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Executive Summary
+                    </h3>
+
+                    <p>
+                        The Executive Summary provides an overview of
+                        the hotel's overall booking performance through
+                        key indicators such as total bookings, total
+                        revenue, cancellation rate, and average daily
+                        rate. It also allows users to filter the analysis
+                        by hotel type, arrival season, and arrival year
+                        to compare overall performance across different
+                        periods and hotel categories.
+                    </p>
+
+                </div>
+
+
+                <!-- DASHBOARD 02 -->
+
+                <div class="dashboard-item">
+
+                    <div class="dashboard-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Cancellation Analysis
+                    </h3>
+
+                    <p>
+                        The Cancellation Analysis focuses on factors
+                        related to booking cancellations, including
+                        lead time, deposit type, and previous cancellation
+                        behavior. This dashboard helps identify how
+                        cancellation rates vary across different booking
+                        conditions and customer histories, providing a
+                        clearer view of patterns that may affect booking
+                        reliability.
+                    </p>
+
+                </div>
+
+
+                <!-- DASHBOARD 03 -->
+
+                <div class="dashboard-item">
+
+                    <div class="dashboard-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Revenue Analysis
+                    </h3>
+
+                    <p>
+                        The Revenue Analysis examines revenue performance
+                        across hotel types and arrival months. The
+                        dashboard allows the comparison of monthly revenue
+                        between City Hotel and Resort Hotel and highlights
+                        seasonal patterns that can be observed throughout
+                        the analyzed period.
+                    </p>
+
+                </div>
+
+
+                <!-- DASHBOARD 04 -->
+
+                <div class="dashboard-item">
+
+                    <div class="dashboard-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Customer Distribution
+                    </h3>
+
+                    <p>
+                        The Customer Distribution section presents the
+                        geographic distribution and characteristics of
+                        hotel guests. It helps identify where guests are
+                        primarily coming from and provides an overview
+                        of customer patterns within the hotel booking
+                        dataset, including the dominance of transient
+                        customers and the concentration of guests from
+                        European countries.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             05 KEY INSIGHTS
+        ========================== -->
+
+        <section class="insights-section">
+
+            <div class="insights-header">
+
+                <span class="section-number">
+                    05
+                </span>
+
+                <h2>
+                    Key Insights
+                </h2>
+
+            </div>
+
+
+            <div class="insights-content">
+
+                <p>
+                    The analysis shows that booking cancellations are
+                    associated with several booking characteristics.
+                    Reservations made more than 180 days in advance
+                    showed a 49% cancellation rate in the project
+                    analysis, while shorter lead-time bookings showed
+                    lower cancellation rates. Deposit type and previous
+                    cancellation behavior also showed differences in
+                    cancellation patterns. The analysis further found
+                    that 89% of reservations had no deposit, providing
+                    an important context when examining cancellation
+                    behavior.
+                </p>
+
+                <p>
+                    The dashboard also highlights patterns in revenue,
+                    seasonality, and customer distribution. August was
+                    identified as the highest revenue month in the
+                    project analysis for both City Hotel and Resort
+                    Hotel. Online Travel Agencies generated the largest
+                    booking volume, while transient customers represented
+                    the dominant customer category. The geographic
+                    analysis also showed that Europe had the largest
+                    concentration of guests within the dataset.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             06 REPORT
+        ========================== -->
+
+        <section class="report-section">
+
+            <div class="report-header">
+
+                <span class="section-number">
+                    06
+                </span>
+
+                <h2>
+                    Report
+                </h2>
+
+                <p>
+                    Read the complete project report for the detailed
+                    methodology, ETL pipeline, data warehouse design,
+                    dashboard analysis, results, and recommendations.
+                </p>
+
+                <a
+                    href="report/report_dateng.pdf"
+                    target="_blank"
+                    class="report-button"
+                >
+                    View Full Report →
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</body>
+
+</html>

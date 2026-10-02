@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Cafe Business Sales Performance Analysis | Ofa Sofwatan Munifa
+    </title>
+
+
+    <style>
+
+        :root {
+            --bg: #f6f0e7;
+            --text: #2f211b;
+            --muted: #765f50;
+            --line: #d8cbbb;
+            --accent: #8b5e3c;
+            --white: #fffaf3;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           MAIN CONTAINER
+        ====================================================== */
+
+        .project-detail {
+
+            width: 100%;
+
+            max-width: 1450px;
+
+            margin: 0 auto;
+
+            padding: 0 48px 100px;
+        }
+
+
+        /* =====================================================
+           BACK TO PROJECTS
+        ====================================================== */
+
+        .back-projects {
+
+            display: inline-block;
+
+            margin-top: 25px;
+            margin-bottom: 70px;
+
+            color: var(--text);
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            letter-spacing: 0.03em;
+
+            transition: opacity 0.2s ease;
+        }
+
+
+        .back-projects:hover {
+
+            opacity: 0.55;
+        }
+
+
+        /* =====================================================
+           SECTION NUMBER
+        ====================================================== */
+
+        .section-number {
+
+            display: block;
+
+            font-size: 10px;
+
+            letter-spacing: 0.25em;
+
+            text-transform: uppercase;
+
+            color: var(--accent);
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           01 OVERVIEW
+        ====================================================== */
+
+        .project-overview {
+
+            padding-bottom: 0;
+        }
+
+
+        .project-overview h1 {
+
+            max-width: 1050px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-weight: 400;
+
+            font-size: clamp(
+                54px,
+                7vw,
+                92px
+            );
+
+            line-height: 0.95;
+
+            letter-spacing: -0.045em;
+
+            margin-bottom: 45px;
+        }
+
+
+        .project-description {
+
+            max-width: 760px;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 55px;
+        }
+
+
+        /* =====================================================
+           PROJECT META
+        ====================================================== */
+
+        .project-meta {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            border-top: 1px solid var(--line);
+
+            border-left: 1px solid var(--line);
+
+            margin-bottom: 0;
+        }
+
+
+        .meta-item {
+
+            min-height: 125px;
+
+            padding: 28px 30px;
+
+            border-right: 1px solid var(--line);
+
+            border-bottom: 1px solid var(--line);
+        }
+
+
+        .meta-item span {
+
+            display: block;
+
+            font-size: 9px;
+
+            letter-spacing: 0.2em;
+
+            color: var(--accent);
+
+            margin-bottom: 12px;
+        }
+
+
+        .meta-item strong {
+
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 400;
+
+            color: #211712;
+        }
+
+
+        /* =====================================================
+           GENERAL SECTION
+        ====================================================== */
+
+        .detail-section {
+
+            margin-top: 150px;
+        }
+
+
+        .section-heading {
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-heading h2 {
+
+            margin: 0 0 18px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                60px
+            );
+
+            font-weight: 500;
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .section-heading p {
+
+            max-width: 720px;
+
+            margin: 0;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           02 PROCESS
+        ====================================================== */
+
+        .process-list {
+
+            border-top: 1px solid var(--line);
+        }
+
+
+        .process-item {
+
+            display: grid;
+
+            grid-template-columns:
+                70px
+                300px
+                1fr;
+
+            gap: 30px;
+
+            padding: 35px 0;
+
+            border-bottom: 1px solid var(--line);
+
+            align-items: start;
+        }
+
+
+        .process-number {
+
+            color: var(--accent);
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .process-category {
+
+            color: var(--accent);
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            line-height: 1.4;
+
+            padding-top: 3px;
+        }
+
+
+        .process-content h3 {
+
+            margin: 0 0 8px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 25px;
+
+            font-weight: 500;
+
+            line-height: 1.2;
+        }
+
+
+        .process-content p {
+
+            max-width: 650px;
+
+            margin: 0;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           03 DASHBOARD
+        ====================================================== */
+
+        .dashboard-section {
+
+            margin-top: 150px;
+        }
+
+
+        .dashboard-header {
+
+            margin-bottom: 55px;
+        }
+
+
+        .dashboard-header .section-number {
+
+            margin-bottom: 15px;
+        }
+
+
+        .dashboard-header h2 {
+
+            margin: 0 0 18px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                60px
+            );
+
+            font-weight: 500;
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .dashboard-header p {
+
+            max-width: 720px;
+
+            margin: 0;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           TABLEAU BUTTON
+        ====================================================== */
+
+        .dashboard-button {
+
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 14px 22px;
+
+            border: 1px solid var(--text);
+
+            border-radius: 999px;
+
+            color: var(--text);
+
+            background: transparent;
+
+            font-size: 12px;
+
+            text-decoration: none;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+
+        .dashboard-button:hover {
+
+            background: var(--text);
+
+            color: var(--white);
+        }
+
+
+        /* =====================================================
+           DASHBOARD LIST
+        ====================================================== */
+
+        .dashboard-list {
+
+            border-top: 1px solid var(--line);
+        }
+
+
+        .dashboard-item {
+
+            display: grid;
+
+            grid-template-columns:
+                70px
+                300px
+                1fr;
+
+            gap: 30px;
+
+            padding: 35px 0;
+
+            border-bottom: 1px solid var(--line);
+
+            align-items: start;
+        }
+
+
+        .dashboard-number {
+
+            color: var(--accent);
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .dashboard-item h3 {
+
+            margin: 0;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 25px;
+
+            font-weight: 500;
+
+            line-height: 1.2;
+        }
+
+
+        .dashboard-item p {
+
+            max-width: 650px;
+
+            margin: 0;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           04 KEY INSIGHTS
+        ====================================================== */
+
+        .insights-section {
+
+            margin-top: 150px;
+        }
+
+
+        .insights-header {
+
+            margin-bottom: 45px;
+        }
+
+
+        .insights-header .section-number {
+
+            margin-bottom: 15px;
+        }
+
+
+        .insights-header h2 {
+
+            margin: 0;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                60px
+            );
+
+            font-weight: 500;
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .insights-content {
+
+            max-width: 900px;
+
+            padding-top: 35px;
+
+            border-top: 1px solid var(--line);
+        }
+
+
+        .insights-content p {
+
+            margin: 0 0 25px;
+
+            color: var(--accent);
+
+            font-size: 16px;
+
+            line-height: 1.9;
+        }
+
+
+        .insights-content p:last-child {
+
+            margin-bottom: 0;
+        }
+
+
+        /* =====================================================
+           05 REPORT
+        ====================================================== */
+
+        .report-section {
+
+            margin-top: 150px;
+
+            padding-bottom: 80px;
+        }
+
+
+        .report-header .section-number {
+
+            margin-bottom: 15px;
+        }
+
+
+        .report-header h2 {
+
+            margin: 0 0 18px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                60px
+            );
+
+            font-weight: 500;
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .report-header p {
+
+            max-width: 720px;
+
+            margin: 0 0 35px;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .report-button {
+
+            display: inline-block;
+
+            padding: 14px 22px;
+
+            border: 1px solid var(--text);
+
+            border-radius: 999px;
+
+            color: var(--text);
+
+            font-size: 12px;
+
+            text-decoration: none;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+
+        .report-button:hover {
+
+            background: var(--text);
+
+            color: var(--white);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 768px) {
+
+
+            .project-detail {
+
+                padding:
+                    20px
+                    25px
+                    70px;
+            }
+
+
+            .back-projects {
+
+                margin-bottom: 40px;
+            }
+
+
+            .project-overview h1 {
+
+                font-size: 48px;
+
+                letter-spacing: -2.5px;
+            }
+
+
+            .project-description {
+
+                font-size: 14px;
+
+                margin-bottom: 40px;
+            }
+
+
+            .project-meta {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .meta-item {
+
+                min-height: auto;
+
+                padding:
+                    20px
+                    15px;
+            }
+
+
+            .process-list,
+            .dashboard-list {
+
+                width: 100%;
+            }
+
+
+            .process-item {
+
+                grid-template-columns:
+                    45px
+                    1fr;
+
+                gap: 15px;
+
+                padding: 28px 0;
+            }
+
+
+            .process-category {
+
+                grid-column: 2;
+            }
+
+
+            .process-content {
+
+                grid-column: 2;
+            }
+
+
+            .process-content h3 {
+
+                font-size: 22px;
+            }
+
+
+            .process-content p {
+
+                font-size: 13px;
+            }
+
+
+            .dashboard-item {
+
+                grid-template-columns:
+                    45px
+                    1fr;
+
+                gap: 15px;
+
+                padding: 28px 0;
+            }
+
+
+            .dashboard-item h3 {
+
+                grid-column: 2;
+
+                font-size: 22px;
+            }
+
+
+            .dashboard-item p {
+
+                grid-column: 2;
+
+                font-size: 13px;
+            }
+
+
+            .section-heading h2,
+            .dashboard-header h2,
+            .insights-header h2,
+            .report-header h2 {
+
+                font-size: 44px;
+            }
+
+
+            .insights-content p {
+
+                font-size: 14px;
+
+                line-height: 1.8;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<main class="project-detail">
+
+
+    <!-- =====================================================
+         BACK TO PROJECTS
+    ====================================================== -->
+
+    <a
+        href="index.html"
+        class="back-projects"
+    >
+        ← Back to Projects
+    </a>
+
+
+
+    <!-- =====================================================
+         01 OVERVIEW
+    ====================================================== -->
+
+    <section class="project-overview">
+
+
+        <span class="section-number">
+            01
+        </span>
+
+
+        <h1>
+            Cafe Business Sales
+            Performance Analysis
+        </h1>
+
+
+        <p class="project-description">
+
+            This project focused on analyzing cafe transaction data
+            to understand sales performance and customer purchasing
+            behavior. The data was explored and transformed into
+            meaningful visual insights using Python and Tableau.
+            The analysis covered product performance, purchasing
+            patterns, payment methods, spending levels, and
+            transaction activity.
+
+        </p>
+
+
+
+        <div class="project-meta">
+
+
+            <!-- ROLE -->
+
+            <div class="meta-item">
+
+                <span>
+                    ROLE
+                </span>
+
+                <strong>
+                    Data Analyst · Business Intelligence · Data Visualization
+                </strong>
+
+            </div>
+
+
+            <!-- TOOLS -->
+
+            <div class="meta-item">
+
+                <span>
+                    TOOLS
+                </span>
+
+                <strong>
+                    Python · Tableau
+                </strong>
+
+            </div>
+
+
+            <!-- DATASET -->
+
+            <div class="meta-item">
+
+                <span>
+                    DATASET
+                </span>
+
+                <strong>
+                    Cafe Transaction Data
+                </strong>
+
+            </div>
+
+
+            <!-- OUTPUT -->
+
+            <div class="meta-item">
+
+                <span>
+                    OUTPUT
+                </span>
+
+                <strong>
+                    Interactive Tableau Dashboard
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02 PROCESS
+    ====================================================== -->
+
+    <section class="process-section detail-section">
+
+
+        <div class="process-header section-heading">
+
+
+            <span class="section-number">
+                02
+            </span>
+
+
+            <h2>
+                Process
+            </h2>
+
+
+            <p>
+
+                The project followed a data analysis workflow to
+                transform raw cafe transaction data into structured
+                information and visual insights for understanding
+                sales performance and customer purchasing behavior.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="process-list">
+
+
+            <!-- STEP 01 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    01
+                </div>
+
+
+                <div class="process-category">
+                    DATA SOURCE
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Cafe Transaction Data
+                    </h3>
+
+                    <p>
+
+                        The project started with cafe sales transaction
+                        data containing information related to products,
+                        transaction activity, purchase quantity,
+                        spending, and payment methods.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 02 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    02
+                </div>
+
+
+                <div class="process-category">
+                    PYTHON · DATA PREPARATION
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Data Cleaning & Preprocessing
+                    </h3>
+
+                    <p>
+
+                        The dataset was prepared using Python before
+                        the analysis. The data preparation process
+                        focused on improving data quality and ensuring
+                        that the transaction data was ready for further
+                        analysis and visualization.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 03 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    03
+                </div>
+
+
+                <div class="process-category">
+                    PYTHON · DATA ANALYSIS
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Exploratory Data Analysis
+                    </h3>
+
+                    <p>
+
+                        Exploratory analysis was performed to understand
+                        patterns across product categories, purchase
+                        quantities, spending levels, transaction
+                        activity, and payment methods.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 04 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    04
+                </div>
+
+
+                <div class="process-category">
+                    PYTHON · VISUALIZATION
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Data Visualization
+                    </h3>
+
+                    <p>
+
+                        Python was also used to visualize the analyzed
+                        data and support the exploration of sales and
+                        customer behavior. Visual representations helped
+                        identify patterns before developing the final
+                        interactive dashboard.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 05 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    05
+                </div>
+
+
+                <div class="process-category">
+                    TABLEAU · DATA VISUALIZATION
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Interactive Dashboard
+                    </h3>
+
+                    <p>
+
+                        The processed and analyzed data was presented
+                        through Tableau. Interactive dashboards were
+                        developed to explore overall sales performance,
+                        transaction trends, product performance,
+                        customer behavior, and payment method
+                        distribution.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 06 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    06
+                </div>
+
+
+                <div class="process-category">
+                    BUSINESS ANALYSIS
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Sales Performance Analysis
+                    </h3>
+
+                    <p>
+
+                        The final analysis was used to identify
+                        meaningful sales and purchasing patterns across
+                        products, transaction periods, spending levels,
+                        and payment methods. These findings provided a
+                        clearer view of cafe business performance and
+                        customer purchasing behavior.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         03 DASHBOARD
+    ====================================================== -->
+
+    <section class="dashboard-section">
+
+
+        <div class="dashboard-header">
+
+
+            <span class="section-number">
+                03
+            </span>
+
+
+            <h2>
+                Dashboard
+            </h2>
+
+
+            <p>
+
+                The interactive Tableau dashboard presents the
+                analyzed data through three main views, allowing
+                users to explore sales performance, customer
+                purchasing behavior, and revenue patterns.
+
+            </p>
+
+
+            <!-- TABLEAU BUTTON -->
+
+            <a
+                href="https://public.tableau.com/app/profile/salzabilla.putri/viz/CafeBusinessSalesPerformanceAnalysis/DashboardOverview-1?publish=yes"
+                target="_blank"
+                class="dashboard-button"
+            >
+                View Interactive Tableau Dashboard →
+            </a>
+
+        </div>
+
+
+
+        <div class="dashboard-list">
+
+
+            <!-- DASHBOARD 01 -->
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-number">
+                    01
+                </div>
+
+
+                <h3>
+                    Business Overview
+                </h3>
+
+
+                <p>
+
+                    Provides an overview of cafe sales performance,
+                    including total revenue, transaction activity,
+                    top-selling products, revenue per item, monthly
+                    transaction trends, and payment method distribution.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- DASHBOARD 02 -->
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-number">
+                    02
+                </div>
+
+
+                <h3>
+                    Relationship Analysis
+                </h3>
+
+
+                <p>
+
+                    Explores relationships between customer purchasing
+                    behavior, transaction activity, spending levels,
+                    product categories, and other sales-related
+                    dimensions to identify purchasing patterns.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- DASHBOARD 03 -->
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-number">
+                    03
+                </div>
+
+
+                <h3>
+                    Revenue Analysis
+                </h3>
+
+
+                <p>
+
+                    Focuses on revenue performance across products
+                    and transaction periods to identify differences
+                    in sales contribution and purchasing activity.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 KEY INSIGHTS
+    ====================================================== -->
+
+    <section class="insights-section">
+
+
+        <div class="insights-header">
+
+
+            <span class="section-number">
+                04
+            </span>
+
+
+            <h2>
+                Key Insights
+            </h2>
+
+        </div>
+
+
+
+        <div class="insights-content">
+
+
+            <p>
+
+                The analysis identified differences in sales
+                performance across product categories, with several
+                products contributing more strongly to overall sales
+                and transaction volume. The dashboard also revealed
+                patterns in monthly transaction activity and customer
+                spending behavior, providing a clearer view of how
+                purchasing activity varied across the analyzed period.
+
+            </p>
+
+
+            <p>
+
+                Payment method analysis showed differences in
+                transaction distribution across payment types, while
+                the relationship analysis helped highlight purchasing
+                patterns across customers and products. These findings
+                were visualized through Tableau to support a more
+                structured understanding of cafe business performance
+                and customer behavior.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 REPORT
+    ====================================================== -->
+
+    <section class="report-section">
+
+
+        <div class="report-header">
+
+
+            <span class="section-number">
+                05
+            </span>
+
+
+            <h2>
+                Report
+            </h2>
+
+
+            <p>
+
+                Read the complete project report for additional
+                details about the analysis, visualization,
+                findings, and project development process.
+
+            </p>
+
+
+            <a
+                href="report/report_datvis.pdf"
+                target="_blank"
+                class="report-button"
+            >
+                View Report →
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+</body>
+
+</html>

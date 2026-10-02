@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Customer Satisfaction Dashboard | Ofa Sofwatan Munifa
+    </title>
+
+    <style>
+
+        :root {
+            --bg: #f6f0e7;
+            --text: #2f211b;
+            --muted: #765f50;
+            --line: #d8cbbb;
+            --accent: #8b5e3c;
+            --white: #fffaf3;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           MAIN
+        ====================================================== */
+
+        .project-detail {
+
+            width: 100%;
+
+            max-width: 1450px;
+
+            margin: 0 auto;
+
+            padding: 0 48px 100px;
+        }
+
+
+        /* =====================================================
+           BACK
+        ====================================================== */
+
+        .back-projects {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            margin-bottom: 70px;
+
+            color: var(--text);
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            transition: opacity 0.2s ease;
+        }
+
+
+        .back-projects:hover {
+            opacity: 0.55;
+        }
+
+
+        /* =====================================================
+           SECTION NUMBER
+        ====================================================== */
+
+        .section-number {
+
+            display: block;
+
+            font-size: 10px;
+
+            letter-spacing: 0.25em;
+
+            text-transform: uppercase;
+
+            color: var(--accent);
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           01 OVERVIEW
+        ====================================================== */
+
+        .project-overview h1 {
+
+            max-width: 1050px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(
+                54px,
+                7vw,
+                92px
+            );
+
+            font-weight: 400;
+
+            line-height: 0.95;
+
+            letter-spacing: -0.045em;
+
+            margin-bottom: 45px;
+        }
+
+
+        .project-description {
+
+            max-width: 760px;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 55px;
+        }
+
+
+        /* =====================================================
+           META
+        ====================================================== */
+
+        .project-meta {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            border-top: 1px solid var(--line);
+
+            border-left: 1px solid var(--line);
+        }
+
+
+        .meta-item {
+
+            min-height: 125px;
+
+            padding: 28px 30px;
+
+            border-right: 1px solid var(--line);
+
+            border-bottom: 1px solid var(--line);
+        }
+
+
+        .meta-item span {
+
+            display: block;
+
+            font-size: 9px;
+
+            letter-spacing: 0.2em;
+
+            color: var(--accent);
+
+            margin-bottom: 12px;
+        }
+
+
+        .meta-item strong {
+
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 400;
+
+            color: #211712;
+        }
+
+
+        /* =====================================================
+           GENERAL SECTION
+        ====================================================== */
+
+        .detail-section {
+
+            margin-top: 150px;
+        }
+
+
+        .section-heading {
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-heading h2 {
+
+            margin: 0 0 18px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                60px
+            );
+
+            font-weight: 500;
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .section-heading p {
+
+            max-width: 720px;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           02 VIDEO
+        ====================================================== */
+
+        .project-video-section {
+
+            margin-top: 150px;
+        }
+
+
+        .project-video-header {
+
+            margin-bottom: 25px;
+        }
+
+
+        .project-video-header h2 {
+
+            margin: 0 0 8px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 25px;
+
+            font-weight: 500;
+        }
+
+
+        .project-video-header p {
+
+            max-width: 900px;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .project-video {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            height: auto;
+
+            aspect-ratio: 16 / 9;
+
+            border-radius: 14px;
+
+            border: 1px solid var(--line);
+
+            background: #eee8df;
+
+            object-fit: contain;
+        }
+
+
+        /* =====================================================
+           03 PROCESS
+        ====================================================== */
+
+        .process-list {
+
+            border-top: 1px solid var(--line);
+        }
+
+
+        .process-item {
+
+            display: grid;
+
+            grid-template-columns:
+                70px
+                300px
+                1fr;
+
+            gap: 30px;
+
+            padding: 35px 0;
+
+            border-bottom: 1px solid var(--line);
+
+            align-items: start;
+        }
+
+
+        .process-number {
+
+            color: var(--accent);
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .process-category {
+
+            color: var(--accent);
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            line-height: 1.4;
+
+            padding-top: 3px;
+        }
+
+
+        .process-content h3 {
+
+            margin: 0 0 8px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 25px;
+
+            font-weight: 500;
+
+            line-height: 1.2;
+        }
+
+
+        .process-content p {
+
+            max-width: 650px;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           04 DASHBOARD
+        ====================================================== */
+
+        .dashboard-section {
+
+            margin-top: 150px;
+        }
+
+
+        .dashboard-header {
+
+            margin-bottom: 55px;
+        }
+
+
+        .dashboard-header h2 {
+
+            margin: 0 0 18px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                60px
+            );
+
+            font-weight: 500;
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .dashboard-header p {
+
+            max-width: 720px;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .dashboard-button {
+
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 14px 22px;
+
+            border: 1px solid var(--text);
+
+            border-radius: 999px;
+
+            color: var(--text);
+
+            background: transparent;
+
+            font-size: 12px;
+
+            text-decoration: none;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+
+        .dashboard-button:hover {
+
+            background: var(--text);
+
+            color: var(--white);
+        }
+
+
+        .dashboard-list {
+
+            border-top: 1px solid var(--line);
+        }
+
+
+        .dashboard-item {
+
+            display: grid;
+
+            grid-template-columns:
+                70px
+                300px
+                1fr;
+
+            gap: 30px;
+
+            padding: 35px 0;
+
+            border-bottom: 1px solid var(--line);
+
+            align-items: start;
+        }
+
+
+        .dashboard-number {
+
+            color: var(--accent);
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .dashboard-item h3 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 25px;
+
+            font-weight: 500;
+
+            line-height: 1.2;
+        }
+
+
+        .dashboard-item p {
+
+            max-width: 650px;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           05 KEY INSIGHTS
+        ====================================================== */
+
+        .insights-section {
+
+            margin-top: 150px;
+        }
+
+
+        .insights-header {
+
+            margin-bottom: 45px;
+        }
+
+
+        .insights-header h2 {
+
+            margin: 0;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                60px
+            );
+
+            font-weight: 500;
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .insights-content {
+
+            max-width: 900px;
+
+            padding-top: 35px;
+
+            border-top: 1px solid var(--line);
+        }
+
+
+        .insights-content p {
+
+            margin-bottom: 25px;
+
+            color: var(--accent);
+
+            font-size: 16px;
+
+            line-height: 1.9;
+        }
+
+
+        .insights-content p:last-child {
+
+            margin-bottom: 0;
+        }
+
+
+        /* =====================================================
+           06 REPORT
+        ====================================================== */
+
+        .report-section {
+
+            margin-top: 150px;
+
+            padding-bottom: 80px;
+        }
+
+
+        .report-header h2 {
+
+            margin: 0 0 18px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                60px
+            );
+
+            font-weight: 500;
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .report-header p {
+
+            max-width: 720px;
+
+            margin-bottom: 35px;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .report-button {
+
+            display: inline-block;
+
+            padding: 14px 22px;
+
+            border: 1px solid var(--text);
+
+            border-radius: 999px;
+
+            color: var(--text);
+
+            font-size: 12px;
+
+            text-decoration: none;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+
+        .report-button:hover {
+
+            background: var(--text);
+
+            color: var(--white);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 768px) {
+
+            .project-detail {
+
+                padding:
+                    20px
+                    25px
+                    70px;
+            }
+
+
+            .back-projects {
+
+                margin-bottom: 40px;
+            }
+
+
+            .project-overview h1 {
+
+                font-size: 48px;
+
+                letter-spacing: -2.5px;
+            }
+
+
+            .project-meta {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .meta-item {
+
+                min-height: auto;
+
+                padding:
+                    20px
+                    15px;
+            }
+
+
+            .process-item {
+
+                grid-template-columns:
+                    45px
+                    1fr;
+
+                gap: 15px;
+
+                padding: 28px 0;
+            }
+
+
+            .process-category {
+
+                grid-column: 2;
+            }
+
+
+            .process-content {
+
+                grid-column: 2;
+            }
+
+
+            .dashboard-item {
+
+                grid-template-columns:
+                    45px
+                    1fr;
+
+                gap: 15px;
+
+                padding: 28px 0;
+            }
+
+
+            .dashboard-item h3 {
+
+                grid-column: 2;
+            }
+
+
+            .dashboard-item p {
+
+                grid-column: 2;
+            }
+
+
+            .project-video {
+
+                border-radius: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<main class="project-detail">
+
+
+    <!-- =====================================================
+         BACK
+    ====================================================== -->
+
+    <a
+        href="index.html"
+        class="back-projects"
+    >
+        ← Back to Projects
+    </a>
+
+
+
+    <!-- =====================================================
+         01 OVERVIEW
+    ====================================================== -->
+
+    <section class="project-overview">
+
+
+        <span class="section-number">
+            01
+        </span>
+
+
+        <h1>
+            Customer Satisfaction
+            Dashboard
+        </h1>
+
+
+        <p class="project-description">
+
+            This project analyzed Brazilian e-commerce data to
+            identify factors associated with customer satisfaction
+            and dissatisfaction. The project combined big data
+            processing, predictive modeling, and business
+            intelligence to examine delivery performance,
+            order complexity, and regional patterns.
+
+        </p>
+
+
+
+        <div class="project-meta">
+
+
+            <div class="meta-item">
+
+                <span>
+                    ROLE
+                </span>
+
+                <strong>
+                    Data Analyst & Predictive Modeling
+                </strong>
+
+            </div>
+
+
+            <div class="meta-item">
+
+                <span>
+                    TOOLS
+                </span>
+
+                <strong>
+                    Hadoop · HDFS · MapReduce · Hive · Spark · Power BI
+                </strong>
+
+            </div>
+
+
+            <div class="meta-item">
+
+                <span>
+                    DATASET
+                </span>
+
+                <strong>
+                    Brazilian Public E-Commerce Dataset
+                </strong>
+
+            </div>
+
+
+            <div class="meta-item">
+
+                <span>
+                    OUTPUT
+                </span>
+
+                <strong>
+                    Predictive Model · Power BI Dashboard
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02 VIDEO
+    ====================================================== -->
+
+    <section class="project-video-section">
+
+
+        <div class="project-video-header">
+
+            <span class="section-number">
+                02
+            </span>
+
+
+            <h2>
+                Project Video
+            </h2>
+
+
+            <p>
+
+                A walkthrough of the customer satisfaction analysis,
+                predictive modeling process, and Power BI dashboard.
+
+            </p>
+
+        </div>
+
+
+        <video
+            class="project-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            controls
+        >
+
+            <source
+                src="report/Demo_customer.mp4"
+                type="video/mp4"
+            >
+
+            Your browser does not support the video tag.
+
+        </video>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         03 PROCESS
+    ====================================================== -->
+
+    <section class="process-section detail-section">
+
+
+        <div class="section-heading">
+
+
+            <span class="section-number">
+                03
+            </span>
+
+
+            <h2>
+                Process
+            </h2>
+
+
+            <p>
+
+                The project followed a big data and predictive
+                analytics workflow to transform Brazilian
+                e-commerce transaction data into analytical
+                insights about customer satisfaction.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="process-list">
+
+
+            <!-- 01 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    01
+                </div>
+
+
+                <div class="process-category">
+                    DATA SOURCE
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Brazilian E-Commerce Data
+                    </h3>
+
+                    <p>
+
+                        The project used the Brazilian Public
+                        E-Commerce dataset containing transaction,
+                        customer, order, payment, review, product,
+                        seller, and geographic information.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    02
+                </div>
+
+
+                <div class="process-category">
+                    PYTHON · DATA PREPARATION
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Data Preparation
+                    </h3>
+
+                    <p>
+
+                        Python and Pandas were used to clean and
+                        prepare the CSV data before further processing
+                        within the big data environment.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    03
+                </div>
+
+
+                <div class="process-category">
+                    HDFS · HADOOP
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Distributed Data Storage
+                    </h3>
+
+                    <p>
+
+                        The prepared datasets were loaded into
+                        HDFS within a Cloudera virtual machine
+                        environment to support distributed storage
+                        and processing.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    04
+                </div>
+
+
+                <div class="process-category">
+                    SPARK · PYSPARK
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Data Processing
+                    </h3>
+
+                    <p>
+
+                        Apache Spark was used for distributed data
+                        processing, transformation, feature
+                        preparation, and analytical workloads.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    05
+                </div>
+
+
+                <div class="process-category">
+                    PREDICTIVE MODELING
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Customer Satisfaction Prediction
+                    </h3>
+
+                    <p>
+
+                        Predictive modeling was performed using
+                        transaction and delivery-related variables,
+                        including delivery time, late delivery,
+                        order quantity, and delivery cost.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 06 -->
+
+            <div class="process-item">
+
+
+                <div class="process-number">
+                    06
+                </div>
+
+
+                <div class="process-category">
+                    POWER BI · BUSINESS INTELLIGENCE
+                </div>
+
+
+                <div class="process-content">
+
+                    <h3>
+                        Dashboard & Analysis
+                    </h3>
+
+                    <p>
+
+                        The analytical results were presented through
+                        an interactive Power BI dashboard covering
+                        customer satisfaction, delivery performance,
+                        order complexity, and regional patterns.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 DASHBOARD
+    ====================================================== -->
+
+    <section class="dashboard-section">
+
+
+        <div class="dashboard-header">
+
+
+            <span class="section-number">
+                04
+            </span>
+
+
+            <h2>
+                Dashboard
+            </h2>
+
+
+            <p>
+
+                The Power BI dashboard presents the project findings
+                through four main analytical views focused on customer
+                satisfaction, delivery performance, order complexity,
+                and regional patterns.
+
+            </p>
+
+
+            <a
+                href="https://app.powerbi.com/groups/me/reports/bd9aecc8-8f65-4ad5-8144-6e2f341b62fd/1ad5e60f18f4250250dd?experience=power-bi"
+                target="_blank"
+                class="dashboard-button"
+            >
+                View Interactive Power BI Dashboard →
+            </a>
+
+        </div>
+
+
+
+        <div class="dashboard-list">
+
+
+            <!-- 01 -->
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-number">
+                    01
+                </div>
+
+
+                <h3>
+                    Executive Summary
+                </h3>
+
+
+                <p>
+
+                    Provides an overview of customer satisfaction
+                    and delivery performance, helping summarize
+                    the main patterns identified from the analyzed
+                    e-commerce data.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-number">
+                    02
+                </div>
+
+
+                <h3>
+                    Delivery & Late Analysis
+                </h3>
+
+
+                <p>
+
+                    Examines delivery time and late delivery patterns
+                    to understand their relationship with customer
+                    satisfaction and dissatisfaction.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-number">
+                    03
+                </div>
+
+
+                <h3>
+                    Regional Analysis
+                </h3>
+
+
+                <p>
+
+                    Visualizes customer and delivery-related patterns
+                    across regions to provide a geographic perspective
+                    on customer satisfaction and logistics performance.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-number">
+                    04
+                </div>
+
+
+                <h3>
+                    Order Complexity
+                </h3>
+
+
+                <p>
+
+                    Explores order-related characteristics such as
+                    quantity and delivery factors to identify patterns
+                    associated with customer satisfaction.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 KEY INSIGHTS
+    ====================================================== -->
+
+    <section class="insights-section">
+
+
+        <div class="insights-header">
+
+
+            <span class="section-number">
+                05
+            </span>
+
+
+            <h2>
+                Key Insights
+            </h2>
+
+        </div>
+
+
+
+        <div class="insights-content">
+
+
+            <p>
+
+                The analysis showed that delivery-related factors
+                were strongly associated with customer satisfaction.
+                Delivery time, late delivery, order quantity, and
+                delivery cost were among the factors identified
+                through the analysis. The predictive modeling stage
+                achieved an accuracy of 81.98%, while the feature
+                analysis highlighted the importance of logistics and
+                delivery performance in understanding customer
+                satisfaction.
+
+            </p>
+
+
+            <p>
+
+                The dashboard also highlighted patterns in delivery
+                performance, regional activity, and order complexity.
+                These results were presented through Power BI to
+                provide a more structured view of customer satisfaction
+                and logistics performance within the Brazilian
+                e-commerce dataset.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         06 REPORT
+    ====================================================== -->
+
+    <section class="report-section">
+
+
+        <div class="report-header">
+
+
+            <span class="section-number">
+                06
+            </span>
+
+
+            <h2>
+                Report
+            </h2>
+
+
+            <p>
+
+                Read the complete project report for the detailed
+                methodology, big data architecture, predictive
+                modeling, dashboard development, results, and
+                future improvements.
+
+            </p>
+
+
+            <a
+                href="report/report_bdp.pdf"
+                target="_blank"
+                class="report-button"
+            >
+                View Report →
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+</body>
+
+</html>
